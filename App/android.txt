@@ -1,0 +1,3 @@
+title=ARBOLTEC KIVY
+author=Marco y Miriam
+orientation= landscape
