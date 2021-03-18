@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.12.2.final using JasperReports Library version 6.12.2-75c5e90a222ab406e416cbf590a5397028a52de3  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Report_1" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="372c5979-1a3b-406a-82e7-4a7cb30efde2">
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="Consulta_Arbol "/>
+	<queryString language="SQL">
+		<![CDATA[SELECT "CUIDADOS_ABONO"."ABONO_NAME",
+	"CUIDADOS_PLAGAS"."PLAGAS_NAME"
+FROM "CUIDADOS"
+	JOIN "CUIDADOS_ABONO" ON 
+	 "CUIDADOS"."CUI_ENFER_ABONO_ID" = "CUIDADOS_ABONO"."ABONO_ID" 
+	JOIN "CUIDADOS_PLAGAS" ON 
+	 "CUIDADOS"."CUI_ENFER_PLAGAS_ID" = "CUIDADOS_PLAGAS"."PLAGAS_ID"]]>
+	</queryString>
+	<field name="ABONO_NAME" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="ABONO_NAME"/>
+	</field>
+	<field name="PLAGAS_NAME" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="PLAGAS_NAME"/>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="90" splitType="Stretch">
+			<staticText>
+				<reportElement mode="Opaque" x="120" y="3" width="425" height="79" backcolor="#4DB052" uuid="0acd9b51-abc3-43d6-9b4d-88b2412ededc"/>
+				<box>
+					<pen lineWidth="0.0" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle" markup="styled">
+					<font isUnderline="false"/>
+				</textElement>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="120" y="21" width="426" height="41" uuid="73f9966f-ec7c-4f9e-b6c8-2f34f1e87e5c"/>
+				<box>
+					<pen lineWidth="3.5" lineStyle="Solid" lineColor="#176626"/>
+					<topPen lineWidth="3.5" lineStyle="Solid" lineColor="#176626"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="3.5" lineStyle="Solid" lineColor="#176626"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Bell MT" size="26"/>
+				</textElement>
+				<text><![CDATA[Abonos y Plagas de los arboles]]></text>
+			</staticText>
+			<image>
+				<reportElement x="0" y="0" width="120" height="90" uuid="ac282b6e-2bc4-4193-8177-1cd40523612e"/>
+				<imageExpression><![CDATA["C:/Users/peluc/Downloads/WhatsApp Image 2020-06-07 at 11.21.47 PM.jpeg"]]></imageExpression>
+			</image>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="57" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="34" splitType="Stretch">
+			<staticText>
+				<reportElement x="60" y="0" width="100" height="30" uuid="0bc25ac9-7958-4b18-a74f-dd96b870bdb0">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="54e846a1-2d8e-46ab-bbe4-a3be920da497"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[ABONOS]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="320" y="0" width="100" height="30" uuid="3468f7d8-8eec-48ee-a7bb-0c81b0447a93">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="5855e118-8000-4419-af78-236d70588743"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[PLAGAS]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="33" splitType="Stretch">
+			<textField>
+				<reportElement x="60" y="0" width="100" height="30" uuid="a60962aa-acb8-4601-bdf2-5a5a483e9ae8">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="54e846a1-2d8e-46ab-bbe4-a3be920da497"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{ABONO_NAME}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="320" y="0" width="100" height="30" uuid="3afbc221-5449-476a-ad68-c809190b2208">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="5855e118-8000-4419-af78-236d70588743"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{PLAGAS_NAME}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="61" splitType="Stretch">
+			<textField pattern="MMMMM dd, yyyy">
+				<reportElement x="0" y="20" width="100" height="30" uuid="087489c4-8b5c-44fc-aa65-6c2a4f20a419"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="227" y="20" width="100" height="30" uuid="a23314d0-1501-4649-b899-1cb357837ff2"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA["Page " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement x="330" y="20" width="100" height="30" uuid="c54ace53-09ce-418e-b944-a8c31e4e4156"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[" of " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.12.2.final using JasperReports Library version 6.12.2-75c5e90a222ab406e416cbf590a5397028a52de3  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="graf" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="972b3306-de89-4a7f-8317-e72fb6825341">
+	<property name="com.jaspersoft.studio.data.sql.tables">
+		<![CDATA[IkNPTlNVTFRBX0FSQk9MIiAsMjAwLDMzLGE5NDEzZTZhLWQxOTItNDNjMC1iZDY5LTE5MTJhM2U3
+MDkzNjsiQVJMX0VTUEUiICwyMCwyMCxmZjA0MDQ1Zi0yMjRhLTRjZTAtYjJiNS01YzM2YjMxOTEz
+NDI7]]>
+	</property>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="TBS_ARBOL"/>
+	<queryString language="SQL">
+		<![CDATA[SELECT "ARL_ESPE"."ARLPE_NAME",
+	"CONSULTA_ARBOL"."ARL_TOTAL"
+FROM "ARL_ESPE",
+	"CONSULTA_ARBOL"
+WHERE 
+	 "CONSULTA_ARBOL"."ARL_ARL_ESPE_ID" = "ARL_ESPE"."ARLPE_ID"]]>
+	</queryString>
+	<field name="ARLPE_NAME" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="ARLPE_NAME"/>
+	</field>
+	<field name="ARL_TOTAL" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.label" value="ARL_TOTAL"/>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="94" splitType="Stretch">
+			<staticText>
+				<reportElement mode="Opaque" x="120" y="0" width="425" height="79" backcolor="#4DB052" uuid="093ffd60-399c-4fb0-9978-61b6304a6280"/>
+				<box>
+					<pen lineWidth="0.0" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle" markup="styled">
+					<font isUnderline="false"/>
+				</textElement>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="120" y="20" width="426" height="41" uuid="d99c852b-f30c-4854-bfaf-9ba30c67b9ed"/>
+				<box>
+					<pen lineWidth="3.5" lineStyle="Solid" lineColor="#176626"/>
+					<topPen lineWidth="3.5" lineStyle="Solid" lineColor="#176626"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="3.5" lineStyle="Solid" lineColor="#176626"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Bell MT" size="26"/>
+				</textElement>
+				<text><![CDATA[Numero de Arboles por su Nombre]]></text>
+			</staticText>
+			<image>
+				<reportElement x="0" y="0" width="120" height="79" uuid="80026ba7-efd9-4419-9e85-98a9ef7cb2e3"/>
+				<imageExpression><![CDATA["C:/Users/peluc/Downloads/WhatsApp Image 2020-06-07 at 11.21.47 PM.jpeg"]]></imageExpression>
+			</image>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="50" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="174" height="41" uuid="9218c12c-5666-416c-acb7-ef18b448d8bf"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Bell MT" isBold="true"/>
+				</textElement>
+				<text><![CDATA[VISUALIZACION GRAFICA]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<detail>
+		<band height="32" splitType="Stretch">
+			<textField>
+				<reportElement x="10" y="1" width="280" height="30" uuid="1d1f6723-bc5f-43b7-bb1d-6006d457c304"/>
+				<box>
+					<pen lineWidth="1.0" lineStyle="Solid"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{ARLPE_NAME}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="290" y="1" width="254" height="30" uuid="8e9278a9-1148-43c4-b403-c3998bb596fa"/>
+				<box>
+					<pen lineWidth="1.0" lineStyle="Solid"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{ARL_TOTAL}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="22" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="32" splitType="Stretch">
+			<textField pattern="MMMMM dd, yyyy">
+				<reportElement x="10" y="0" width="100" height="30" uuid="b1540a6b-ecba-487c-9a56-32b357fe8d0d"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band height="352" splitType="Stretch">
+			<bar3DChart>
+				<chart evaluationTime="Report">
+					<reportElement x="10" y="18" width="534" height="302" uuid="fdb66c9e-d9c8-4661-8841-2d7c202091b0"/>
+					<box>
+						<pen lineWidth="1.0" lineStyle="Solid"/>
+					</box>
+					<chartTitle/>
+					<chartSubtitle/>
+					<chartLegend/>
+				</chart>
+				<categoryDataset>
+					<dataset resetType="Report"/>
+					<categorySeries>
+						<seriesExpression><![CDATA[$F{ARLPE_NAME}]]></seriesExpression>
+						<categoryExpression><![CDATA[0]]></categoryExpression>
+						<valueExpression><![CDATA[$F{ARL_TOTAL}]]></valueExpression>
+						<labelExpression><![CDATA[$F{ARLPE_NAME}]]></labelExpression>
+					</categorySeries>
+				</categoryDataset>
+				<bar3DPlot>
+					<plot/>
+					<itemLabel/>
+					<categoryAxisFormat>
+						<axisFormat labelColor="#000000" tickLabelColor="#000000" axisLineColor="#000000"/>
+					</categoryAxisFormat>
+					<valueAxisFormat>
+						<axisFormat labelColor="#000000" tickLabelColor="#000000" axisLineColor="#000000"/>
+					</valueAxisFormat>
+				</bar3DPlot>
+			</bar3DChart>
+		</band>
+	</summary>
+</jasperReport>
